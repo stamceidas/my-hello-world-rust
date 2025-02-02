@@ -1,7 +1,8 @@
-use axum::{routing::get, Router};
+use axum::{routing::get, Router, response::Json};
+use serde_json::json;
 
-async fn hello_world() -> &'static str {
-    "Hello, world from Shuttle! 🚀 "
+async fn hello_world() -> Json<serde_json::Value> {
+    Json(json!("Hello, world from Shuttle! 🚀 "))
 }
 
 #[shuttle_runtime::main]
