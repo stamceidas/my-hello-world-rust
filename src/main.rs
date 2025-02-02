@@ -49,7 +49,7 @@ async fn delete_rustacean(id: u32) -> NoContent {
 #[rocket::main]
 async fn main() -> Result<(), rocket::Error> {
     rocket::build()
-        .mount("/api", routes![
+        .mount("/", routes![
             rustaceans,
             rustacean_by_id,
             create_rustacean,
